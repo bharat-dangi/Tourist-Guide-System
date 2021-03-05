@@ -1,0 +1,10 @@
+
+body{
+	overflow-y: scroll;
+	overflow-x:hidden; 
+}
+
+#registration {
+	height: 1100px;
+	margin-top: 450px;
+}

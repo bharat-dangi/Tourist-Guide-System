@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+	rel="stylesheet">
+<link th:href="@{/css/login.css}" rel="stylesheet">
+<link th:href="@{/css/registration.css}" rel="stylesheet">
+<title>Registration Page</title>
+</head>
+
+<body>
+	<div id="registration" class="login-div">
+		<!-- <div class="logo"><img src="../static/images/logo.png" th:src="@{images/logo.png}"/</div> -->
+		<div class="title">Tourist Guide</div>
+		<div class="sub-title">MINOR PROJECT</div>
+
+		<form class="fields" th:object="${userForm}"
+			th:action="@{/registration}" method="post">
+
+			<div class="username">
+				<label for="focusFullName"><svg fill="#999"
+						viewBox="0 0 20 20">
+							<path
+							d="M8.749,9.934c0,0.247-0.202,0.449-0.449,0.449H4.257c-0.247,0-0.449-0.202-0.449-0.449S4.01,9.484,4.257,9.484H8.3C8.547,9.484,8.749,9.687,8.749,9.934 M7.402,12.627H4.257c-0.247,0-0.449,0.202-0.449,0.449s0.202,0.449,0.449,0.449h3.145c0.247,0,0.449-0.202,0.449-0.449S7.648,12.627,7.402,12.627 M8.3,6.339H4.257c-0.247,0-0.449,0.202-0.449,0.449c0,0.247,0.202,0.449,0.449,0.449H8.3c0.247,0,0.449-0.202,0.449-0.449C8.749,6.541,8.547,6.339,8.3,6.339 M18.631,4.543v10.78c0,0.248-0.202,0.45-0.449,0.45H2.011c-0.247,0-0.449-0.202-0.449-0.45V4.543c0-0.247,0.202-0.449,0.449-0.449h16.17C18.429,4.094,18.631,4.296,18.631,4.543 M17.732,4.993H2.46v9.882h15.272V4.993z M16.371,13.078c0,0.247-0.202,0.449-0.449,0.449H9.646c-0.247,0-0.449-0.202-0.449-0.449c0-1.479,0.883-2.747,2.162-3.299c-0.434-0.418-0.714-1.008-0.714-1.642c0-1.197,0.997-2.246,2.133-2.246s2.134,1.049,2.134,2.246c0,0.634-0.28,1.224-0.714,1.642C15.475,10.331,16.371,11.6,16.371,13.078M11.542,8.137c0,0.622,0.539,1.348,1.235,1.348s1.235-0.726,1.235-1.348c0-0.622-0.539-1.348-1.235-1.348S11.542,7.515,11.542,8.137 M15.435,12.629c-0.214-1.273-1.323-2.246-2.657-2.246s-2.431,0.973-2.644,2.246H15.435z"></path>
+							</svg> </label> <input type="text" id="focusFullName" class="user-input"
+					placeholder="Enter FullName" autofocus="autofocus" name="fullName"
+					th:field="*{fullName}" />
+				<div class="has-error" th:if="${#fields.hasErrors('username')}"
+					th:errors="*{username}"></div>
+			</div>
+
+			<div class="username">
+				<label for="email"> <svg fill="#999" viewBox="0 0 1024 1024">
+					<path class="path1"
+							d="M896 307.2h-819.2c-42.347 0-76.8 34.453-76.8 76.8v460.8c0 42.349 34.453 76.8 76.8 76.8h819.2c42.349 0 76.8-34.451 76.8-76.8v-460.8c0-42.347-34.451-76.8-76.8-76.8zM896 358.4c1.514 0 2.99 0.158 4.434 0.411l-385.632 257.090c-14.862 9.907-41.938 9.907-56.802 0l-385.634-257.090c1.443-0.253 2.92-0.411 4.434-0.411h819.2zM896 870.4h-819.2c-14.115 0-25.6-11.485-25.6-25.6v-438.566l378.4 252.267c15.925 10.618 36.363 15.925 56.8 15.925s40.877-5.307 56.802-15.925l378.398-252.267v438.566c0 14.115-11.485 25.6-25.6 25.6z"></path></svg>
+				</label> <input type="email" id="email" class="user-input"
+					placeholder="Enter EmailId" autofocus="autofocus" name="email"
+					th:field="*{email}" />
+				<div class="has-error" th:if="${#fields.hasErrors('username')}"
+					th:errors="*{username}"></div>
+			</div>
+
+			<div class="username">
+				<label for="focusUserName"> <svg fill="#999"
+						viewBox="0 0 20 20">
+							<path
+							d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+						</svg>
+				</label> <input type="text" id="focusUserName" class="user-input"
+					placeholder="Enter Username" autofocus="autofocus" name="username"
+					th:field="*{username}" />
+				<div class="has-error" th:if="${#fields.hasErrors('username')}"
+					th:errors="*{username}"></div>
+			</div>
+
+			<div class="password">
+				<label for="focusPassword"> <svg fill="#999"
+						viewBox="0 0 1024 1024">
+					<path class="path1"
+							d="M742.4 409.6h-25.6v-76.8c0-127.043-103.357-230.4-230.4-230.4s-230.4 103.357-230.4 230.4v76.8h-25.6c-42.347 0-76.8 34.453-76.8 76.8v409.6c0 42.347 34.453 76.8 76.8 76.8h512c42.347 0 76.8-34.453 76.8-76.8v-409.6c0-42.347-34.453-76.8-76.8-76.8zM307.2 332.8c0-98.811 80.389-179.2 179.2-179.2s179.2 80.389 179.2 179.2v76.8h-358.4v-76.8zM768 896c0 14.115-11.485 25.6-25.6 25.6h-512c-14.115 0-25.6-11.485-25.6-25.6v-409.6c0-14.115 11.485-25.6 25.6-25.6h512c14.115 0 25.6 11.485 25.6 25.6v409.6z"></path></svg>
+				</label> <input type="password" class="pass-input" id=focusPassword
+					placeholder="Enter Password" autofocus="autofocus" name="password"
+					th:field="*{password}" />
+				<div class="has-error" th:if="${#fields.hasErrors('password')}"
+					th:errors="*{password}"></div>
+			</div>
+
+			<div class="password">
+				<label for="focusPasswordConfirm"> <svg fill="#999"
+						viewBox="0 0 1024 1024">
+					<path class="path1"
+							d="M742.4 409.6h-25.6v-76.8c0-127.043-103.357-230.4-230.4-230.4s-230.4 103.357-230.4 230.4v76.8h-25.6c-42.347 0-76.8 34.453-76.8 76.8v409.6c0 42.347 34.453 76.8 76.8 76.8h512c42.347 0 76.8-34.453 76.8-76.8v-409.6c0-42.347-34.453-76.8-76.8-76.8zM307.2 332.8c0-98.811 80.389-179.2 179.2-179.2s179.2 80.389 179.2 179.2v76.8h-358.4v-76.8zM768 896c0 14.115-11.485 25.6-25.6 25.6h-512c-14.115 0-25.6-11.485-25.6-25.6v-409.6c0-14.115 11.485-25.6 25.6-25.6h512c14.115 0 25.6 11.485 25.6 25.6v409.6z"></path></svg>
+				</label> <input type="password" class="pass-input" id=focusPasswordConfirm
+					placeholder="Confirm Password" autofocus="autofocus"
+					name="passwordConfirm" th:field="*{passwordConfirm}" />
+				<div class="has-error"
+					th:if="${#fields.hasErrors('passwordConfirm')}"
+					th:errors="*{passwordConfirm}"></div>
+			</div>
+
+			<div class="username">
+				<label for="address"><svg fill="#999"
+						viewBox="0 0 20 20">
+							<path
+							d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
+						</svg> </label> <input type="text" id="address" class="user-input"
+					placeholder="Enter Address" autofocus="autofocus" name="address"
+					th:field="*{address}" />
+				<div class="has-error" th:if="${#fields.hasErrors('username')}"
+					th:errors="*{username}"></div>
+			</div>
+
+			<div class="username">
+				<label for="phone"> <svg fill="#999" viewBox="0 0 20 20">
+							<path d="M13.372,1.781H6.628c-0.696,0-1.265,0.569-1.265,1.265v13.91c0,0.695,0.569,1.265,1.265,1.265h6.744c0.695,0,1.265-0.569,1.265-1.265V3.045C14.637,2.35,14.067,1.781,13.372,1.781 M13.794,16.955c0,0.228-0.194,0.421-0.422,0.421H6.628c-0.228,0-0.421-0.193-0.421-0.421v-0.843h7.587V16.955z M13.794,15.269H6.207V4.731h7.587V15.269z M13.794,3.888H6.207V3.045c0-0.228,0.194-0.421,0.421-0.421h6.744c0.228,0,0.422,0.194,0.422,0.421V3.888z"></path>
+						</svg>
+					</label> <input type="text" id="phone" class="user-input"
+					placeholder="Enter Contact No." autofocus="autofocus" name="phone"
+					th:field="*{phone}" />
+				<div class="has-error" th:if="${#fields.hasErrors('username')}"
+					th:errors="*{username}"></div>
+			</div>
+
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+
+			<button class="signin-button">Create Account</button>
+			<div class="link">
+				<p>
+					Already have account?<a href="/login" th:href="@{/login}">Sign
+						In</a></p>
+			</div>
+		</form>
+
+	</div>
+</body>
+</html>
